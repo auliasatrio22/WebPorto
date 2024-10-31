@@ -108,16 +108,28 @@ function Navbar({
           setActive={setActive}
           active={active}
           item="Art"
+          href="/art"
         >
           <div className="flex flex-col space-y-4 text-sm">
-            <Link href="/art">
+            <Link
+              href="/art"
+              onClick={() => {
+                OnSectionClick("About"); 
+              }}
+            >
               <div className="cursor-pointer">Photos</div>
             </Link>
-            <Link href="/design">
+            <Link
+              href="/art"
+              onClick={() => {
+                OnSectionClick("Projects"); 
+              }}
+            >
               <div className="cursor-pointer">Design</div>
             </Link>
           </div>
         </MenuItem>
+
         <MenuItem
           setActive={setActive}
           active={active}

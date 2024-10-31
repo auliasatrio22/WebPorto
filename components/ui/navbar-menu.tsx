@@ -1,10 +1,9 @@
 "use client";
-import React from "react";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import Image from "next/image";
-import { MdDarkMode } from "react-icons/md";
-import { MdLightMode } from "react-icons/md";
+import Link from "next/link";
+import React from "react";
+import { MdDarkMode, MdLightMode } from "react-icons/md";
 
 const transition = {
   type: "spring",
@@ -15,63 +14,64 @@ const transition = {
   restSpeed: 0.001,
 };
 
+// Update pada MenuItem
 export const MenuItem = ({
   setActive,
   active,
   item,
   children,
   onClick,
+  href,
 }: {
   setActive: (item: string) => void;
   active: string | null;
   item: string;
   children?: React.ReactNode;
   onClick?: () => void;
+  href?: string;
 }) => {
   const handleClick = () => {
     setActive(item);
     if (onClick) onClick();
   };
+
   return (
-    <div onMouseEnter={() => setActive(item)} className="relative ">
-      <motion.p
-        transition={{ duration: 0.3 }}
-        className="cursor-pointer  text-sm sm:text-lg text-black dark:text-white font-bold"
-        onClick={handleClick}
-      >
-        {item === "icon" ? (
-          <span className="flex justify-center mt-0.5 md:mt-1 mr-5">
-            <MdLightMode className="absolute dark:scale-0 scale-100" />
-            <MdDarkMode className="absolute dark:scale-100 scale-0" />
-          </span>
-        ) : (
-          <span className="cursor-pointer text-sm sm:text-lg text-black hover:before:scale-x-100 hover:before:origin-left relative before:w-full before:h-1 before:z-0	 before:origin-right before:transition-transform before:duration-300 before:scale-x-0 before:bg-amber-300 before:absolute before:left-0 before:-bottom-2 dark:text-white font-bold">
-            {item}
-          </span>
-        )}
-      </motion.p>
-      {active !== null && (
+    <div onMouseEnter={() => setActive(item)} className="relative">
+      <Link href={href || "#"} passHref>
+        <motion.p
+          transition={{ duration: 0.3 }}
+          className="cursor-pointer text-sm sm:text-lg text-black dark:text-white font-bold"
+          onClick={handleClick}
+        >
+          {item === "icon" ? (
+            <span className="flex justify-center mt-0.5 md:mt-1 mr-5">
+              <MdLightMode className="absolute dark:scale-0 scale-100" />
+              <MdDarkMode className="absolute dark:scale-100 scale-0" />
+            </span>
+          ) : (
+            <span className="cursor-pointer text-sm sm:text-lg text-black hover:before:scale-x-100 hover:before:origin-left relative before:w-full before:h-1 before:z-0 before:origin-right before:transition-transform before:duration-300 before:scale-x-0 before:bg-amber-300 before:absolute before:left-0 before:-bottom-2 dark:text-white font-bold">
+              {item}
+            </span>
+          )}
+        </motion.p>
+      </Link>
+      {active === item && children && (
         <motion.div
           initial={{ opacity: 0, scale: 0.85, y: 10 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={transition}
         >
-          {active === item && (
-            <div className="absolute top-[calc(100%_+_1.2rem)] left-1/2 transform -translate-x-1/2 pt-4">
-              <motion.div
-                transition={transition}
-                layoutId="active" // layoutId ensures smooth animation
-                className="bg-white dark:bg-black backdrop-blur-sm rounded-2xl overflow-hidden border border-black/[0.2] dark:border-white/[0.2] shadow-xl"
-              >
-                <motion.div
-                  layout // layout ensures smooth animation
-                  className="w-max h-full p-4"
-                >
-                  {children}
-                </motion.div>
+          <div className="absolute top-[calc(100%_+_1.2rem)] left-1/2 transform -translate-x-1/2 pt-4">
+            <motion.div
+              transition={transition}
+              layoutId="active"
+              className="bg-white dark:bg-black backdrop-blur-sm rounded-2xl overflow-hidden border border-black/[0.2] dark:border-white/[0.2] shadow-xl"
+            >
+              <motion.div layout className="w-max h-full p-4">
+                {children}
               </motion.div>
-            </div>
-          )}
+            </motion.div>
+          </div>
         </motion.div>
       )}
     </div>
