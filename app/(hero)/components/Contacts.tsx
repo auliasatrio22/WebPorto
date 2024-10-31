@@ -1,9 +1,9 @@
 "use client";
-import React, { useState } from "react";
 import { AnimatedSection } from "@/components/ui/animated-reveal";
-import { FaGithub } from "react-icons/fa";
+import React, { useState } from "react";
 import { AiFillInstagram } from "react-icons/ai";
-import { FaLinkedinIn, FaDiscord } from "react-icons/fa";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 
 const Popup = ({
   message,
@@ -81,29 +81,21 @@ export default function Contacts() {
       <div className="grid grid-cols-1 lg:grid-cols-2">
         <AnimatedSection>
           <div className="flex flex-col my-12 gap-10 items-start">
-            <div
+          <div
               onClick={() =>
                 window.open(
-                  "https://www.instagram.com/kevin_cornelliuss/",
+                  "https://mail.google.com/mail/u/0/?fs=1&to=auliasatrio22@gmail.com&tf=cm",
                   "_blank"
                 )
               }
-              className="mr-1 hover:opacity-60 cursor-pointer flex justify-center items-center underline underline-offset-2 decoration-amber-300 font-bold text-2xl gap-3"
+              className="mr-1  hover:opacity-60  flex cursor-pointer justify-center items-center underline underline-offset-2 decoration-amber-300 font-bold text-2xl gap-3"
             >
-              <AiFillInstagram /> Instagram
-            </div>
-            <div
-              onClick={() =>
-                window.open("https://github.com/kevincornellius", "_blank")
-              }
-              className="mr-1  hover:opacity-60   flex justify-center cursor-pointer items-center underline underline-offset-2 decoration-amber-300 font-bold text-2xl gap-3"
-            >
-              <FaGithub /> Github
+              <MdEmail /> Email
             </div>
             <div
               onClick={() =>
                 window.open(
-                  "https://www.linkedin.com/in/kevincornellius/",
+                  "https://www.linkedin.com/in/aulia-satrio-wijoyo/",
                   "_blank"
                 )
               }
@@ -113,14 +105,22 @@ export default function Contacts() {
             </div>
             <div
               onClick={() =>
+                window.open("https://github.com/auliasatrio22", "_blank")
+              }
+              className="mr-1  hover:opacity-60   flex justify-center cursor-pointer items-center underline underline-offset-2 decoration-amber-300 font-bold text-2xl gap-3"
+            >
+              <FaGithub /> Github
+            </div>
+            <div
+              onClick={() =>
                 window.open(
-                  "https://discord.com/users/324513234604523530",
+                  "https://www.instagram.com/satsatsatrio/",
                   "_blank"
                 )
               }
-              className="mr-1  hover:opacity-60  flex cursor-pointer justify-center items-center underline underline-offset-2 decoration-amber-300 font-bold text-2xl gap-3"
+              className="mr-1 hover:opacity-60 cursor-pointer flex justify-center items-center underline underline-offset-2 decoration-amber-300 font-bold text-2xl gap-3"
             >
-              <FaDiscord /> Discord
+              <AiFillInstagram /> Instagram
             </div>
           </div>
         </AnimatedSection>

@@ -1,30 +1,17 @@
 "use client";
+import Link from 'next/link';
 
 import {
   HoveredLink,
   Menu,
-  MenuItem,
-  ProductItem,
+  MenuItem
 } from "@/components/ui/navbar-menu";
 import { cn } from "@/lib/utils";
-import React, { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
-import beautyWeb from "../../../components/assets/beautyweb.png";
-import mern from "../../../components/assets/mern.png";
-import { FaGithub } from "react-icons/fa";
+import { useEffect, useState } from "react";
 import { AiFillInstagram } from "react-icons/ai";
-import { FaLinkedinIn } from "react-icons/fa";
-import { FaDiscord } from "react-icons/fa";
-
-// function Navbar() {
-//   return (
-//     // <div className="py-8 min-h-screen">
-//     //   <h1 className="text-2xl font-black underline underline-offset-4 decoration-amber-300">
-//     //     cornellius
-//     //   </h1>
-//     // </div>
-//   );
-// }
+import { FaGithub, FaLinkedinIn } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 
 function Navbar({
   OnSectionClick,
@@ -86,38 +73,67 @@ function Navbar({
           <MenuItem
             setActive={setActive}
             active={active}
-            item="Kevin Cornellius"
+            item="Aulia Satrio Wijoyo"
             onClick={() => OnSectionClick("Contacts")}
           >
             <div className="flex flex-col space-y-4 text-sm items-start">
-              <HoveredLink href="https://www.instagram.com/kevin_cornelliuss/">
+            <HoveredLink href="https://mail.google.com/mail/u/0/?fs=1&to=auliasatrio22@gmail.com&tf=cm">
                 <div className="mr-1">
-                  <AiFillInstagram />
+                  <MdEmail />
                 </div>
-                Instagram
+                Email
               </HoveredLink>
-              <HoveredLink href="https://github.com/kevincornellius">
-                <div className="mr-1">
-                  <FaGithub />
-                </div>
-                Github
-              </HoveredLink>
-              <HoveredLink href="https://www.linkedin.com/in/kevincornellius/">
+              <HoveredLink href="https://www.linkedin.com/in/aulia-satrio-wijoyo/">
                 <div className="mr-1">
                   <FaLinkedinIn />
                 </div>
                 LinkedIn
               </HoveredLink>
-              <HoveredLink href="https://discord.com/users/324513234604523530">
+              <HoveredLink href="https://github.com/auliasatrio22">
                 <div className="mr-1">
-                  <FaDiscord />
+                  <FaGithub />
                 </div>
-                Discord
+                Github
+              </HoveredLink>
+              <HoveredLink href="https://www.instagram.com/satsatsatrio/">
+                <div className="mr-1">
+                  <AiFillInstagram />
+                </div>
+                Instagram
               </HoveredLink>
             </div>
           </MenuItem>
         </div>
         <MenuItem
+          setActive={setActive}
+          active={active}
+          item="Art"
+        >
+          <div className="flex flex-col space-y-4 text-sm">
+            <Link href="/art">
+              <div className="cursor-pointer">Photos</div>
+            </Link>
+            <Link href="/design">
+              <div className="cursor-pointer">Design</div>
+            </Link>
+          </div>
+        </MenuItem>
+        <MenuItem
+          setActive={setActive}
+          active={active}
+          item="Blogs"
+          onClick={() => OnSectionClick("Blogs")}
+        >
+          <div className="flex flex-col space-y-4 text-sm">
+            <div
+              className="cursor-pointer"
+              onClick={() => OnSectionClick("")}
+            >
+              Blogs
+            </div>
+          </div>
+        </MenuItem>
+        {/*<MenuItem
           setActive={setActive}
           active={active}
           item="Projects"
@@ -137,7 +153,7 @@ function Navbar({
               description="Integrated with Stripe and Cloudinary"
             />
           </div>
-        </MenuItem>
+        </MenuItem>*/}
         <MenuItem
           setActive={setActive}
           active={active}
@@ -153,9 +169,21 @@ function Navbar({
             </div>
             <div
               className="cursor-pointer"
-              onClick={() => OnSectionClick("Experiences")}
+              onClick={() => OnSectionClick("Projects")}
             >
-              Experiences
+              Projects
+            </div>
+            <div
+              className="cursor-pointer"
+              onClick={() => OnSectionClick("Organizations")}
+            >
+              Organizations
+            </div>
+            <div
+              className="cursor-pointer"
+              onClick={() => OnSectionClick("Volunteer")}
+            >
+              Volunteer
             </div>
             <div
               className="cursor-pointer"

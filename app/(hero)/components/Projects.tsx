@@ -12,6 +12,7 @@ import { GrCss3 } from "react-icons/gr";
 import { IoLogoJavascript } from "react-icons/io5";
 import { SiExpress, SiMongodb } from "react-icons/si";
 import { RiNodejsLine } from "react-icons/ri";
+
 function Projects() {
   return (
     <div className="min-h-screen ">

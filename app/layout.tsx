@@ -6,7 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Kevin Cornellius",
+  title: "Aulia Satrio Wijoyo",
   description: "Self-made personal website made with passion",
 };
 

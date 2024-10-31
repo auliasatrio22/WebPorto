@@ -1,19 +1,22 @@
 "use client";
-import React, { useRef } from "react";
-import Navbar from "./components/Navbar";
-import About from "./components/About";
-import { TracingBeam } from "@/components/ui/tracing-beam";
-import Projects from "./components/Projects";
 import { AnimatedSection } from "@/components/ui/animated-reveal";
-import Experiences from "./components/Experiences";
+import { TracingBeam } from "@/components/ui/tracing-beam";
+import React, { useRef } from "react";
+import About from "./components/About";
 import Achievement from "./components/Achievement";
 import Contacts from "./components/Contacts";
 import Educations from "./components/Educations";
+import Projects from "./components/Projects";
+import Navbar from "./components/Navbar";
+import Volunteer from "./components/Volunteer";
+import Organizations from "./components/Organizations";
+import Footer from "./components/Footer";
 
 function Page() {
   const AboutRef = useRef<HTMLDivElement>(null);
   const ProjectsRef = useRef<HTMLDivElement>(null);
-  const ExperiencesRef = useRef<HTMLDivElement>(null);
+  const OrganizationsRef = useRef<HTMLDivElement>(null);
+  const VolunteerRef = useRef<HTMLDivElement>(null);
   const AchievementRef = useRef<HTMLDivElement>(null);
   const ContactsRef = useRef<HTMLDivElement>(null);
   const EducationsRef = useRef<HTMLDivElement>(null);
@@ -22,11 +25,18 @@ function Page() {
     const RefMap: { [key: string]: React.RefObject<HTMLDivElement> } = {
       About: AboutRef,
       Projects: ProjectsRef,
-      Experiences: ExperiencesRef,
+      Organizations: OrganizationsRef,
+      Volunteer: VolunteerRef,
       Education: EducationsRef,
       Achievement: AchievementRef,
       Contacts: ContactsRef,
     };
+
+    if (section === "Art") {
+      // Redirect to the Art page if Art is clicked
+      window.location.href = "/art"; // Navigasi ke halaman Art
+      return;
+    }
 
     const Ref = RefMap[section]?.current;
     if (Ref) {
@@ -48,26 +58,26 @@ function Page() {
                 <About OnSectionClick={ScrollToSection} />
               </div>
             </AnimatedSection>
-
             <div ref={ProjectsRef}>
               <Projects />
             </div>
-
-            <div ref={ExperiencesRef}>
-              <Experiences />
+            <div ref={OrganizationsRef}>
+              <Organizations />
+            </div>
+            <div ref={VolunteerRef}>
+              <Volunteer />
             </div>
             <div ref={EducationsRef}>
               <Educations />
             </div>
-
             <div ref={AchievementRef}>
               <Achievement />
             </div>
-
             <div ref={ContactsRef}>
               <Contacts />
             </div>
           </div>
+          <Footer />
         </TracingBeam>
       </div>
     </div>
