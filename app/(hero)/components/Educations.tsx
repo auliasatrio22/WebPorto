@@ -2,11 +2,12 @@ import { AnimatedSection } from "@/components/ui/animated-reveal";
 import React from "react";
 import logoUI from "../../../components/assets/ui.png";
 import logo53 from "../../../components/assets/53.png";
+
 function Educations() {
   return (
     <div>
       <AnimatedSection>
-        <h1 className="font-black text-3xl sm:text-4xl underline underline-offset-4 decoration-amber-300 my-16 ">
+        <h1 className="font-black text-3xl sm:text-4xl underline underline-offset-4 decoration-amber-300 my-10">
           My Education
         </h1>
       </AnimatedSection>

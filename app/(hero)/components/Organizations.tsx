@@ -1,12 +1,12 @@
 "use client";
-import vindes from "../../../components/assets/vindes.png";
+import pacil from "../../../components/assets/pacil.jpg";
 import { AnimatedSection } from "@/components/ui/animated-reveal";
 
 function Organizations() {
     return (
       <div className="min-h-full">
         <AnimatedSection>
-          <h1 className="font-black text-3xl sm:text-4xl underline underline-offset-4 decoration-amber-300 my-12">
+          <h1 className="font-black text-3xl sm:text-4xl underline underline-offset-4 decoration-amber-300 my-10">
             My Organizations
           </h1>
         </AnimatedSection>
@@ -17,11 +17,11 @@ function Organizations() {
                 onClick={() =>
                   window.open("https://vindes.id/", "_blank")
                 }
-                className=" cursor-pointer hover:border-amber-100 dark:hover:border-amber-500  flex flex-col lg:flex-row justify-start items-center gap-6 w-full bg-white dark:bg-black border-4 border-amber-300 px-16 py-8 my-4 rounded-3xl"
+                className="cursor-pointer hover:border-amber-100 dark:hover:border-amber-500  flex flex-col lg:flex-row justify-start items-center gap-6 w-full bg-white dark:bg-black border-4 border-amber-300 px-16 py-8 my-4 rounded-3xl"
               >
                 <img
                   draggable="false"
-                  src={vindes.src}
+                  src={pacil.src}
                   alt=""
                   className="w-20 rounded-full"
                 />
@@ -45,11 +45,11 @@ function Organizations() {
                 onClick={() =>
                   window.open("https://vindes.id/", "_blank")
                 }
-                className=" cursor-pointer hover:border-amber-100 dark:hover:border-amber-500  flex flex-col lg:flex-row justify-start items-center gap-6 w-full bg-white dark:bg-black border-4 border-amber-300 px-16 py-8 my-4 rounded-3xl"
+                className="cursor-pointer hover:border-amber-100 dark:hover:border-amber-500 flex flex-col lg:flex-row justify-start items-center gap-6 w-full bg-white dark:bg-black border-4 border-amber-300 px-16 py-8 my-4 rounded-3xl"
               >
                 <img
                   draggable="false"
-                  src={vindes.src}
+                  src={pacil.src}
                   alt=""
                   className="w-20 rounded-full"
                 />
@@ -68,7 +68,6 @@ function Organizations() {
             </AnimatedSection>
         </ul>
       </div>
-      <br />
     </div>
   );
 }

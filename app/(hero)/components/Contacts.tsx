@@ -62,7 +62,7 @@ export default function Contacts() {
   }
 
   return (
-    <div className="py-8">
+    <div className="py-2">
       {popupMessage && (
         <Popup message={popupMessage} onClose={() => setPopupMessage("")} />
       )}
@@ -73,6 +73,7 @@ export default function Contacts() {
           </div>
         </div>
       )}
+      <br></br><br></br>
       <AnimatedSection>
         <h1 className="font-black text-3xl sm:text-4xl underline underline-offset-4 decoration-amber-300">
           Contact Me !

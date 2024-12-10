@@ -107,22 +107,30 @@ function Navbar({
         <MenuItem
           setActive={setActive}
           active={active}
-          item="Art"
-          href="/art"
+          item="Artwork"
+          href="/artwork"
         >
           <div className="flex flex-col space-y-4 text-sm">
             <Link
-              href="/art"
+              href="/artwork"
               onClick={() => {
-                OnSectionClick("About"); 
+                OnSectionClick("Blog"); 
+              }}
+            >
+              <div className="cursor-pointer">Blog</div>
+            </Link>
+            <Link
+              href="/artwork"
+              onClick={() => {
+                OnSectionClick("Photos"); 
               }}
             >
               <div className="cursor-pointer">Photos</div>
             </Link>
             <Link
-              href="/art"
+              href="/artwork"
               onClick={() => {
-                OnSectionClick("Projects"); 
+                OnSectionClick("Design"); 
               }}
             >
               <div className="cursor-pointer">Design</div>
@@ -133,18 +141,21 @@ function Navbar({
         <MenuItem
           setActive={setActive}
           active={active}
-          item="Blogs"
-          onClick={() => OnSectionClick("Blogs")}
+          item="Shops"
+          href="/shop"
         >
           <div className="flex flex-col space-y-4 text-sm">
-            <div
-              className="cursor-pointer"
-              onClick={() => OnSectionClick("")}
+            <Link
+              href="/shop"
+              onClick={() => {
+                OnSectionClick("shop"); 
+              }}
             >
-              Blogs
-            </div>
+              <div className="cursor-pointer">Catalog</div>
+            </Link>
           </div>
         </MenuItem>
+
         {/*<MenuItem
           setActive={setActive}
           active={active}

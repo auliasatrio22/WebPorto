@@ -9,8 +9,9 @@ import { AnimatedSection } from "@/components/ui/animated-reveal";
 function Volunteer() {
   return (
     <div className="min-h-full">
+      <br></br>
       <AnimatedSection>
-        <h1 className="font-black text-3xl sm:text-4xl underline underline-offset-4 decoration-amber-300 my-12">
+        <h1 className="font-black text-3xl sm:text-4xl underline underline-offset-4 decoration-amber-300 my-10">
           My Volunteer Experiences
         </h1>
       </AnimatedSection>

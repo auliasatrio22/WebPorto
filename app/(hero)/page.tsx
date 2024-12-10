@@ -32,9 +32,15 @@ function Page() {
       Contacts: ContactsRef,
     };
 
-    if (section === "Art") {
+    if (section === "Artwork") {
       // Redirect to the Art page if Art is clicked
-      window.location.href = "/art"; // Navigasi ke halaman Art
+      window.location.href = "/artwork"; // Navigasi ke halaman Art
+      return;
+    }
+
+    if (section === "Shops") {
+      // Redirect to the Art page if Blog is clicked
+      window.location.href = "/shop"; // Navigasi ke halaman Blog
       return;
     }
 
@@ -45,6 +51,7 @@ function Page() {
       window.scrollTo({ top, behavior: "smooth" });
     }
   };
+
   return (
     <div className=" min-h-screen dark:bg-black bg-white overflow-hidden  dark:bg-grid-white/[0.09] bg-grid-black/[0.05]">
       <div className=" max-w-xs sm:max-w-sm mx-auto xl:max-w-5xl lg:max-w-3xl   ">

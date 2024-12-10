@@ -1,14 +1,12 @@
 "use client";
-
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
+import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-import Image from "next/image";
 import { useState } from "react";
-import { StaticImageData } from "next/image";
 import { FaGithub } from "react-icons/fa";
 import { IconType } from "react-icons/lib";
-// Update the type definition for the items
+
 type Project = {
   title: string;
   description: string;
@@ -68,7 +66,6 @@ export const HoverEffect = ({
                 Demo
               </button>
               <div
-                // href={item.githubLink}
                 onClick={(e) => {
                   e.stopPropagation();
                   e.preventDefault();
@@ -119,8 +116,8 @@ export const CardImage = ({
       <Image
         src={src}
         alt={alt}
-        layout="fill"
-        objectFit="cover"
+        fill
+        style={{ objectFit: "cover" }}
         className="rounded-lg"
       />
     </div>

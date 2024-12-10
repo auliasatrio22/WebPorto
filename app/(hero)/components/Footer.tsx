@@ -1,5 +1,5 @@
 import Image from "next/image";
-import vindes from "../../../components/assets/vindes.png";
+import asw from "../../../components/assets/asw.png";
 
 function Footer() {
   return (
@@ -7,7 +7,7 @@ function Footer() {
       <div className="flex justify-center mb-4">
         {/* Image Section */}
         <Image
-          src={vindes.src}
+          src={asw.src}
           alt=""
           width={50}
           height={50}
@@ -15,7 +15,7 @@ function Footer() {
         />
       </div>
       <p className="text-sm">
-        © 2024 Aulia Satrio Wijoyo. All rights reserved.
+        © 2024 Satsatsatrio. All rights reserved.
       </p>
       <p className="text-sm">
         Created by{" "}

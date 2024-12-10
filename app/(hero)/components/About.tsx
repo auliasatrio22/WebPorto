@@ -1,7 +1,6 @@
 import React from "react";
 import { FlipWords } from "@/components/ui/flip-words";
 import { Button } from "@/components/ui/moving-border";
-import beautyWeb from "../../../components/assets/beautyweb.png";
 
 function About({
   OnSectionClick,
@@ -20,11 +19,7 @@ function About({
   ];
 
   return (
-    <div className="min-h-full mt-1 mb-32">
-      <img
-        src={beautyWeb.src}
-        className="w-full max-w-4xl h-28 object-cover rounded-lg mx-auto mb-8"
-      />
+    <div className="min-h-full mt-6 mb-32">
       <h1 className="font-black text-4xl sm:text-7xl">Aulia Satrio Wijoyo</h1>
       <p className="font-medium text-xl sm:text-4xl mt-3">
         I'm into&nbsp;
